@@ -8,12 +8,19 @@ STEP:
 // definisco la funzione
 function palindroma(parola) {
 
-    if ((parola[0] == parola[parola.length - 1]) && (parola[1] == parola[parola.length - 2])) {
+    let parolaInversa = '';
 
-        return true;    
+    for (let i = parola.length - 1; i >= 0; i--) {
+        console.log(parola[i]);
+        parolaInversa = parolaInversa + parola[i];
+    }
+
+    console.log(parolaInversa);
+
+    if (parola == parolaInversa) {
+        return true;
     }
     else {
-
         return false;
     }
 }
@@ -21,9 +28,9 @@ function palindroma(parola) {
 // chiedo la parola all'utente
 const word = prompt('inserisci una parola');
 
-const risposta = palindroma(word);
+const risultato = palindroma(word)
 
-if (palindroma(word)) {
+if (risultato) {
     alert('la parola e palindroma');
 }
 else {
